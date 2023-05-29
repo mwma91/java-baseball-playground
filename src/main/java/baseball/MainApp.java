@@ -7,7 +7,7 @@ public class MainApp {
     public static void main(String[] args) {
         // 난수생성
         Random random = new Random(System.currentTimeMillis());
-        Set<String> randomNumbers = new LinkedHashSet<>();
+        List<String> randomNumbers = new ArrayList<>();
         resetRandomNumbers(randomNumbers, random);
 
         // 사용자 입력
@@ -21,12 +21,33 @@ public class MainApp {
                 System.out.println("숫자만 입력하여 주십시오.");
                 continue;
             }
+
+            List<String> userNumbers = splitToStrings(temp);
+            if (userNumbers.size() != 3) {
+                System.out.println("중복 없는 3자리 수를 입력하여 주십시오.");
+                continue;
+            }
         }
     }
 
-    private static void resetRandomNumbers(Set<String> randomNumbers, Random random) {
+    private static List<String> splitToStrings(int temp) {
+        String enteredList = String.valueOf(temp);
+        List<String> inputNumbers = new ArrayList<>();
+        for (int i = 0; i < enteredList.length(); i++) {
+            String enteredNumber = String.valueOf(enteredList.charAt(i));
+            if (!inputNumbers.contains(enteredNumber)) {
+                inputNumbers.add(enteredNumber);
+            }
+        }
+        return inputNumbers;
+    }
+
+    private static void resetRandomNumbers(List<String> randomNumbers, Random random) {
         while (randomNumbers.size() < 3) {
-            randomNumbers.add(String.valueOf(random.nextInt(9) + 1));
+            String randomNumber = String.valueOf(random.nextInt(9) + 1);
+            if (!randomNumbers.contains(randomNumber)) {
+                randomNumbers.add(randomNumber);
+            }
         }
     }
 }
