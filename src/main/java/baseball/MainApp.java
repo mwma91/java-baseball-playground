@@ -27,6 +27,18 @@ public class MainApp {
                 System.out.println("중복 없는 3자리 수를 입력하여 주십시오.");
                 continue;
             }
+
+            int ballCount = 0;
+            int strikeCount = 0;
+            for (int i = 0; i < userNumbers.size(); i++) {
+                if (randomNumbers.get(i).equals(userNumbers.get(i))) {
+                    ++strikeCount;
+                    continue;
+                }
+                if (randomNumbers.contains(userNumbers.get(i))) {
+                    ++ballCount;
+                }
+            }
         }
     }
 
