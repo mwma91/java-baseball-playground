@@ -8,12 +8,15 @@ public class GameResult {
     private int ballCount;
     private int strikeCount;
 
-    public void addBallCount() {
-        ++ballCount;
-    }
+    public void addCallCount(CallType callType) {
+        if (callType.equals(CallType.STRIKE)) {
+            ++strikeCount;
+            return;
+        }
 
-    public void addStrikeCount() {
-        ++strikeCount;
+        if (callType.equals(CallType.BALL)) {
+            ++ballCount;
+        }
     }
 
     public void reset() {
