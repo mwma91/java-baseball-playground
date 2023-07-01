@@ -7,6 +7,10 @@ public class ValidationUtils {
     private static final int MIN_VALUE = 1;
     private static final int MAX_VALUE = 9;
 
+    public static boolean validateNumbers(List<Integer> numbers) {
+        return (numbers != null) && isThreeDigits(numbers) && isValidNumbers(numbers) && !hasDuplicates(numbers);
+    }
+
     public static boolean isThreeDigits(List<Integer> numbers) {
         return numbers.size() == COUNT_OF_NUMBERS;
     }
