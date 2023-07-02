@@ -11,7 +11,7 @@ public class BallTest {
     private Ball ball;
 
     @BeforeEach
-    void setUp() {
+    void setup() {
         ball = new Ball(1, 5);
     }
 

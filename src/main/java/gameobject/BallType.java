@@ -3,15 +3,19 @@ package gameobject;
 public enum BallType {
     STRIKE, BALL, NOTHING;
 
-    public boolean isStrike(BallType ballType) {
+    public static boolean isNotNothing(BallType ballType) {
+        return ballType != NOTHING;
+    }
+
+    public static boolean isStrike(BallType ballType) {
         return ballType == STRIKE;
     }
 
-    public boolean isBall(BallType ballType) {
+    public static boolean isBall(BallType ballType) {
         return ballType == BALL;
     }
 
-    public boolean isNothing(BallType ballType) {
+    public static boolean isNothing(BallType ballType) {
         return ballType == NOTHING;
     }
 }
