@@ -7,15 +7,15 @@ public enum BallType {
         return ballType != NOTHING;
     }
 
-    public static boolean isStrike(BallType ballType) {
-        return ballType == STRIKE;
+    public boolean isStrike() {
+        return this == STRIKE;
     }
 
-    public static boolean isBall(BallType ballType) {
-        return ballType == BALL;
+    public boolean isBall() {
+        return this == BALL;
     }
 
-    public static boolean isNothing(BallType ballType) {
-        return ballType == NOTHING;
+    public boolean isNothing() {
+        return this == NOTHING;
     }
 }

@@ -1,5 +1,6 @@
 package gameobject;
 
+import logic.GameResult;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -28,5 +29,33 @@ public class BallsTest {
     @Test
     void strike() {
         assertThat(computerBalls.checkBallType(new Ball(1, 1))).isEqualTo(BallType.STRIKE);
+    }
+
+    @Test
+    void strike3() {
+        GameResult result = computerBalls.compare(Arrays.asList(1, 2, 3));
+        assertThat(result.getStrikeCount()).isEqualTo(3);
+        assertThat(result.getBallCount()).isEqualTo(0);
+    }
+
+    @Test
+    void strike0_ball0() {
+        GameResult result = computerBalls.compare(Arrays.asList(4, 5, 6));
+        assertThat(result.getStrikeCount()).isEqualTo(0);
+        assertThat(result.getBallCount()).isEqualTo(0);
+    }
+
+    @Test
+    void strike1_ball1() {
+        GameResult result = computerBalls.compare(Arrays.asList(1, 3, 5));
+        assertThat(result.getStrikeCount()).isEqualTo(1);
+        assertThat(result.getBallCount()).isEqualTo(1);
+    }
+
+    @Test
+    void ball3() {
+        GameResult result = computerBalls.compare(Arrays.asList(2, 3, 1));
+        assertThat(result.getStrikeCount()).isEqualTo(0);
+        assertThat(result.getBallCount()).isEqualTo(3);
     }
 }
