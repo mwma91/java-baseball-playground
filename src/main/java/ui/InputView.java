@@ -36,7 +36,7 @@ public class InputView {
     }
 
     private static int getPlayerChoiceInput() {
-        int input = 0;
+        int input;
         try {
             input = Integer.parseInt(scanner.next());
         } catch (Exception e) {
@@ -55,7 +55,7 @@ public class InputView {
     }
 
     private static List<Integer> getPlayerInput() {
-        int input = 0;
+        int input;
         try {
             input = Integer.parseInt(scanner.next());
         } catch (Exception e) {
