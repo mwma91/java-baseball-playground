@@ -43,7 +43,7 @@ ex) git checkout -b apply-feedback
         - ~~다른 Ball과 비교~~
             - ~~순서와 값 모두 일치하면 스트라이크~~
             - ~~값만 일치하면 볼~~
-    - Ball을 3개 보관할 클래스 Balls
-        - 특정 Ball의 BallType 검사
+    - ~~Ball을 3개 보관할 클래스 Balls~~
+        - ~~특정 Ball의 BallType 검사~~
 - 스트라이크 개수에 따라 게임 결과 출력
 - 게임 종료 처리(재시작 or 종료)
