@@ -17,4 +17,8 @@ public class GameResult {
             ++ballCount;
         }
     }
+
+    public boolean isGameOver() {
+        return strikeCount == 3;
+    }
 }

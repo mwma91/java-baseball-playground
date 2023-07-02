@@ -22,6 +22,34 @@ public class InputView {
         return playerNumbers;
     }
 
+    public static int getPlayerChoice() {
+        boolean isValidInput = false;
+        int playerChoice = 0;
+        while (!isValidInput) {
+            pleaseChooseToRestart();
+            playerChoice = getPlayerChoiceInput();
+            isValidInput = ValidationUtils.isValidCoice(playerChoice);
+            pleaseEnterValidNumbers(isValidInput);
+        }
+
+        return playerChoice;
+    }
+
+    private static int getPlayerChoiceInput() {
+        int input = 0;
+        try {
+            input = Integer.parseInt(scanner.next());
+        } catch (Exception e) {
+            return 0;
+        }
+
+        return input;
+    }
+
+    private static void pleaseChooseToRestart() {
+        System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+    }
+
     private static void pleaseEnterNumbers() {
         System.out.println("숫자를 입력해 주세요: ");
     }

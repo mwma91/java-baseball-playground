@@ -25,4 +25,8 @@ public class ValidationUtils {
                 .distinct()
                 .count() != COUNT_OF_NUMBERS;
     }
+
+    public static boolean isValidCoice(int input) {
+        return input == 1 || input == 2;
+    }
 }
